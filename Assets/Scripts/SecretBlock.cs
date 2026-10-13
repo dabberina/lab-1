@@ -2,6 +2,9 @@
 
 public class SecretBlock : MonoBehaviour
 {
+    void OnEnable() { GameManager.OnRestart += ResetBox; }
+    void OnDisable() { GameManager.OnRestart -= ResetBox; }
+
     [Header("Animators")]
     public Animator blockAnimator;   // on Block_Brown_coin itself — plays the bump
     public Animator coinAnimator;    // on Coin_hidden — plays the pop-out
@@ -39,5 +42,14 @@ public class SecretBlock : MonoBehaviour
 
         if (coinObject != null)
             coinObject.SetActive(false); // fully remove the coin once its animation finishes
+    }
+
+    public void ResetBox()
+    {
+        isUsed = false;
+        if (bottomTrigger != null) bottomTrigger.enabled = true;
+
+        blockAnimator.Rebind(); blockAnimator.Update(0f);
+        coinAnimator.Rebind(); coinAnimator.Update(0f);
     }
 }

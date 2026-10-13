@@ -1,7 +1,11 @@
 ﻿using UnityEngine;
 
+
 public class QuestionBox : MonoBehaviour
 {
+    void OnEnable() { GameManager.OnRestart += ResetBox; }
+    void OnDisable() { GameManager.OnRestart -= ResetBox; }
+
     [Header("Animators")]
     public Animator boxAnimator;   // used only for the later "inactive" state swap
     public Animator coinAnimator;
@@ -35,5 +39,14 @@ public class QuestionBox : MonoBehaviour
 
         if (bottomTrigger != null)
             bottomTrigger.enabled = false;
+    }
+
+    public void ResetBox()
+    {
+        isUsed = false;
+        if (bottomTrigger != null) bottomTrigger.enabled = true;
+
+        boxAnimator.Rebind(); boxAnimator.Update(0f);
+        coinAnimator.Rebind(); coinAnimator.Update(0f);
     }
 }
