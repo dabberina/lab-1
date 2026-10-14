@@ -11,10 +11,10 @@ AnimatorStateMachine:
   m_ChildStates:
   - serializedVersion: 1
     m_State: {fileID: 6222578890603697310}
-    m_Position: {x: 300, y: 100, z: 0}
+    m_Position: {x: 320, y: 40, z: 0}
   - serializedVersion: 1
     m_State: {fileID: 4710097340436570809}
-    m_Position: {x: 300, y: 170, z: 0}
+    m_Position: {x: 320, y: 130, z: 0}
   m_ChildStateMachines: []
   m_AnyStateTransitions: []
   m_EntryTransitions: []
@@ -34,7 +34,7 @@ AnimatorStateTransition:
   m_Name: 
   m_Conditions:
   - m_ConditionMode: 1
-    m_ConditionEvent: PopCoin
+    m_ConditionEvent: spawned
     m_EventTreshold: 0
   m_DstStateMachine: {fileID: 0}
   m_DstState: {fileID: 6222578890603697310}
@@ -59,7 +59,7 @@ AnimatorController:
   m_Name: Coin
   serializedVersion: 5
   m_AnimatorParameters:
-  - m_Name: PopCoin
+  - m_Name: spawned
     m_Type: 9
     m_DefaultFloat: 0
     m_DefaultInt: 0

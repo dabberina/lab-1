@@ -21,6 +21,8 @@ public class QuestionBox : MonoBehaviour
 
     void OnTriggerEnter2D(Collider2D other)
     {
+
+        Debug.Log($"{other.name} (layer {LayerMask.LayerToName(other.gameObject.layer)}) entered {name}");
         if (isUsed) return;
 
         if (other.CompareTag("Player"))

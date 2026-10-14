@@ -14,9 +14,10 @@ GameObject:
   - component: {fileID: 7649090407062539827}
   - component: {fileID: 7981666334209576700}
   - component: {fileID: 6396966970855545575}
+  - component: {fileID: 3863187954809513657}
   m_Layer: 6
   m_Name: Block_Question
-  m_TagString: Untagged
+  m_TagString: Obstacles
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -211,6 +212,22 @@ SpringJoint2D:
   m_Distance: 1
   m_DampingRatio: 1
   m_Frequency: 5
+--- !u!114 &3863187954809513657
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 414717767491767068}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 18179189a50c2194bac32a6ee2fec713, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::QuestionBoxPowerupController
+  powerupAnimator: {fileID: 8350563983496415063}
+  powerup: {fileID: 4638204388715753570}
+  boxAudio: {fileID: 3928693353590735266}
+  spawnClip: {fileID: 8300000, guid: d885ffc842af744d89f7d595ffcc176a, type: 3}
 --- !u!1 &512562096097184440
 GameObject:
   m_ObjectHideFlags: 0
@@ -222,8 +239,7 @@ GameObject:
   - component: {fileID: 6912507352661436643}
   - component: {fileID: 4790327350446175214}
   - component: {fileID: 8350563983496415063}
-  - component: {fileID: 4437535100423590269}
-  - component: {fileID: 1635616555764866908}
+  - component: {fileID: 4638204388715753570}
   m_Layer: 7
   m_Name: Coin
   m_TagString: Untagged
@@ -327,7 +343,7 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
---- !u!114 &4437535100423590269
+--- !u!114 &4638204388715753570
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -336,42 +352,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 512562096097184440}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: cab302f02368ccd408285e1a9b03d18e, type: 3}
+  m_Script: {fileID: 11500000, guid: 27dbb3949138e024f890d7c46d8aa8d7, type: 3}
   m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::QuestionBox
-  boxAnimator: {fileID: 7649090407062539827}
-  coinAnimator: {fileID: 8350563983496415063}
-  boxAudio: {fileID: 0}
-  coinSound: {fileID: 0}
-  bottomTrigger: {fileID: 0}
---- !u!114 &1635616555764866908
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 512562096097184440}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b542ee2b45fa3a84e82287a8c18725f4, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::AnimationEventIntTool
-  parameter: 0
-  useInt:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: 
-        m_MethodName: 
-        m_Mode: 0
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: 
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+  m_EditorClassIdentifier: Assembly-CSharp::CoinPowerup
+  type: 0
+  spawned: 0
 --- !u!1 &1435174608190140954
 GameObject:
   m_ObjectHideFlags: 0
@@ -384,7 +369,7 @@ GameObject:
   - component: {fileID: 2579528811443310147}
   m_Layer: 6
   m_Name: RSideCollider
-  m_TagString: Untagged
+  m_TagString: Obstacles
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -458,10 +443,9 @@ GameObject:
   - component: {fileID: 6881926458486955095}
   - component: {fileID: 468075970155329535}
   - component: {fileID: 3928693353590735266}
-  - component: {fileID: 4753185060641551332}
   m_Layer: 6
   m_Name: Question Block coin
-  m_TagString: Untagged
+  m_TagString: Obstacles
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -480,11 +464,10 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 5012404876831285792}
-  - {fileID: 6912507352661436643}
   - {fileID: 1061301958251437786}
-  - {fileID: 6292953046967561986}
   - {fileID: 6451683793604888472}
   - {fileID: 7598995285367677543}
+  - {fileID: 6912507352661436643}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!50 &468075970155329535
@@ -523,10 +506,10 @@ AudioSource:
   m_GameObject: {fileID: 3028957212634966270}
   m_Enabled: 1
   serializedVersion: 4
-  OutputAudioMixerGroup: {fileID: 0}
+  OutputAudioMixerGroup: {fileID: -3546456940931006921, guid: 7cf4494313ada6144956a7f30a94a8b7, type: 2}
   m_audioClip: {fileID: 0}
   m_Resource: {fileID: 0}
-  m_PlayOnAwake: 1
+  m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
   Loop: 0
@@ -611,23 +594,6 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
---- !u!114 &4753185060641551332
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3028957212634966270}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: cab302f02368ccd408285e1a9b03d18e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::QuestionBox
-  boxAnimator: {fileID: 7649090407062539827}
-  coinAnimator: {fileID: 8350563983496415063}
-  boxAudio: {fileID: 3928693353590735266}
-  coinSound: {fileID: 8300000, guid: d885ffc842af744d89f7d595ffcc176a, type: 3}
-  bottomTrigger: {fileID: 4774391397381048400}
 --- !u!1 &5592568163056668813
 GameObject:
   m_ObjectHideFlags: 0
@@ -640,7 +606,7 @@ GameObject:
   - component: {fileID: 3072765856778209646}
   m_Layer: 6
   m_Name: TopCollider
-  m_TagString: Untagged
+  m_TagString: Obstacles
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -715,7 +681,7 @@ GameObject:
   - component: {fileID: 4971084129397769871}
   m_Layer: 6
   m_Name: LSideCollider
-  m_TagString: Untagged
+  m_TagString: Obstacles
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -766,81 +732,6 @@ EdgeCollider2D:
     serializedVersion: 2
     m_Bits: 4294967295
   m_IsTrigger: 0
-  m_UsedByEffector: 0
-  m_CompositeOperation: 0
-  m_CompositeOrder: 0
-  m_Offset: {x: 0, y: 0}
-  m_EdgeRadius: 0
-  m_Points:
-  - {x: -0.5, y: 0}
-  - {x: 0.5, y: 0}
-  m_AdjacentStartPoint: {x: 0, y: 0}
-  m_AdjacentEndPoint: {x: 0, y: 0}
-  m_UseAdjacentStartPoint: 0
-  m_UseAdjacentEndPoint: 0
---- !u!1 &7861437885096389414
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 6292953046967561986}
-  - component: {fileID: 4774391397381048400}
-  m_Layer: 6
-  m_Name: BotCollider
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &6292953046967561986
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7861437885096389414}
-  serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: -0.5, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 6881926458486955095}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!68 &4774391397381048400
-EdgeCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7861437885096389414}
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_ForceSendLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_ForceReceiveLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_ContactCaptureLayers:
-    serializedVersion: 2
-    m_Bits: 63
-  m_CallbackLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0

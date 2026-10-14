@@ -7,6 +7,8 @@ TagManager:
   - Ground
   - Enemy
   - Manager
+  - Obstacles
+  - Pipe
   layers:
   - Default
   - TransparentFX
@@ -55,6 +57,9 @@ TagManager:
     locked: 0
   - name: characters
     uniqueID: 1000367097
+    locked: 0
+  - name: Castle
+    uniqueID: 3237700927
     locked: 0
   m_RenderingLayers:
   - Default

@@ -4,9 +4,16 @@ using UnityEngine.Events;
 public class GoombaStomp : MonoBehaviour
 {
     public Animator goombaAnimator;
-    public UnityEvent onStomped;      // wire this to GameManager.IncreaseScore
+    public UnityEvent onStomped;  // wire this to GameManager.IncreaseScore
+    private AudioSource stompAudio;
+    public AudioClip stompClip;
 
     public bool IsStomped { get; private set; }
+
+    void Awake()
+    {
+        stompAudio = GetComponentInParent<AudioSource>();
+    }
 
     public void Stomp()
     {
@@ -16,7 +23,8 @@ public class GoombaStomp : MonoBehaviour
         goombaAnimator.SetTrigger("stomped");
         GetComponent<Collider2D>().enabled = false;      // can no longer hurt Mario
         GetComponent<EnemyMovement>().enabled = false;   // stop walking
-        onStomped.Invoke();
+        GameManager.instance.IncreaseScore(1);
+        stompAudio.PlayOneShot(stompClip);
     }
 
     // Animation Event: last frame of the squash clip
